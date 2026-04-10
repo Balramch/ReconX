@@ -26,45 +26,6 @@ Manual recon is slow and unorganized. ReconX solves this by:
 - Structuring results per target & platform
 - Making bug bounty workflow faster and scalable
 
----
-
-## 📁 Project Structure
-
-── config
-│── __init__.py
-│── settings.py
-├── core
-│ ├── config.py
-│ ├── health.py
-│ ├── __init__.py
-│ ├── logger.py
-│ ├── pipeline.py
-│ ├── probe.py
-│ ├── resolver.py
-│ ├── runner.py
-│ ├── subdomain.py
-│ └── utils.py
-├── data
-│ ├── resolvers.txt
-│ └── wordlists
-├── main.py
-├── modules
-│ ├── brute
-│ ├── dns_brute.py
-│ ├── __init__.py
-│ ├── passive
-│ ├── resolver
-│ └── validator
-├── output
-├── Readme.md
-├── requirement.txt
-└── structure.md
-
-
-
-
----
-
 ## ⚙️ Installation
 
 ### 1. Clone Repository
@@ -76,6 +37,19 @@ cd ReconX
 ## Install Python Dependencies
 ```
 pip install -r requirements.txt
+
+```
+## Install Other tools on the system
+```
+Subfinder
+assetfinder
+findomain
+httpx-toolkit
+```
+## Note: If requiremets.txt not install on your system use python virtual enviroment
+```
+python3 -m venv venv
+source venv/bin/activate
 
 ```
 🚀 Usage
@@ -90,32 +64,6 @@ Flag	Description
 -p	Platform (bugcrowd / hackerone / others)
 -t	Program type (bpp / vdp / private)
 ```
-
-
-📂 Output Example
-output/
-└── bugcrowd/
-    └── bpp/
-        └── example_com/
-            ├── subs.txt
-            ├── resolved.txt
-
-
-🧪 Example Output
-==================================================
-        ReconX - Recon Automation Tool
-==================================================
-Target       : bugcrowd.com
-Platform     : bugcrowd
-Program Type : bpp
---------------------------------------------------
-[*] Subdomain Enumeration Started
-[*] Resolving Subdomains
-[+] Found: 124 subdomains
-[+] Resolved: 98 live domains
-
-
-
 
 
 👨‍💻 Author
